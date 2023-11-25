@@ -1,30 +1,33 @@
 #!/usr/bin/python3
 import sys
 
-"""rsa file"""
+"""
+rsa, 25th of November, 2023
+by Judge Kriegler Lawoko
+"""
 
 
 def factorization():
 
-    """RSA"""
+    """RSA file"""
     try:
         fil = sys.argv[1]
-        while open(fil) as f:
-             for n in f:
-                 n = int(n)
-                 if n % 2 == 0:
-                     print("{}={}*{}".forma
-         t(n, n // 2, 2))
-                     continue
-                 r = 3
-                 while r < n // 2:
-                     if n % r == 0:
-                         print("{}={}*{}",f
-             ormat(n, n // r, r))
+        with open(fil) as f:
+            for n in f:
+                n = int(n)
+                if n % 2 == 0:
+                    print("{}={}*{}".format(n, n // 2, 2))
+                    continue
+                r = 3
+                while r < n // 2:
+                    if n % r == 0:
+                        print("{}={}*{}".format(n, n // r, r))
                         break
-                     r = r + 2
-                 if r == (n // 2) + 1:
-                    print("{}={}*{}".forma
-        t(n, n, 1))
+                    r = r + 2
+                if r == (n // 2) + 1:
+                    print("{}={}*{}".format(n, n, 1))
     except (IndexError):
         pass
+
+
+factorization()
