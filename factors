@@ -1,6 +1,6 @@
-#!/usr/bin/pyton3
-from sys import argv
+#!/usr/bin/python3
 import sys
+from sys import argv
 
 """file factors file
    create on 25 of november
