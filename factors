@@ -14,11 +14,10 @@ def factorize(num):
     # Factorizes numbers"""
     a = 2
 
-    if num > 2:
+    if num < 2:
+        return
     print()
     print(num, "<- ")
-    else:
-        return
     while num % a:
         a += 1
     print("{:.0f}={:.0f}*{:.0f}".format(num, num / a, a))
@@ -38,9 +37,9 @@ try:
             factorize(num)
             l = fil.readline()
 except FileNotFoundError:
-    print(f'File not found: {argv}')
+    print("File not found: %d" % (argv))
 except ValueError:
-    print(f'Invalid input in the file: {argv}')
+    print("Invalid input in the file: %d" % (argv))
 except Exception as ex:
-    print(f'An error occurred: {str(ex)}')
+    print("An error occurred: %s" % (str(ex)))
     pass

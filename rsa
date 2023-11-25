@@ -12,8 +12,8 @@ def factorization():
     """RSA file"""
     try:
         fil = sys.argv[1]
-        with open(fil) as f:
-            for n in f:
+        with open(fil) as file:
+            for n in file:
                 n = int(n)
                 if n % 2 == 0:
                     print("{}={}*{}".format(n, n // 2, 2))
